@@ -52,6 +52,7 @@
             android:id="@+id/apply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
             android:text="确定"
             android:layout_centerInParent="true"/>
     </RelativeLayout>

@@ -11,13 +11,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
-    EditText userNameText;
+    private EditText userNameText;
     EditText passwordText;
     EditText checkPasswordText;
     EditText phoneText;
     EditText verificationCodeText;
     Button getVerificationButton;
     Button applyButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
