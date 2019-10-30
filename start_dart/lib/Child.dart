@@ -12,8 +12,7 @@ class Child extends Parent{
   Child.mingminggouzaohanshu(int a):super(1){
     print('子类的命名构造函数');
   }
-
-  //命名构造函数+初始化列表
+  //命名构造函数+初始化列表 c
   Child.mingminggouzaohanshu2(String aaa,String bbb)
       : aaa = aaa + 'aaaa',
         bbb = bbb + 'bbbb',

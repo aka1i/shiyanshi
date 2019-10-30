@@ -22,9 +22,9 @@ void main(){
   FirstClass()..functionE();
   print('-------------判断一个变量是不是方法-------------');
   var a = SecondClass().functionA;
-  print(a is Function);
+  print(a is Object);
 
-  
+//
   print('-------------可选命名参数-------------');
   SecondClass()..functionB("SY");
   SecondClass()..functionB("SY",height: 150,weight: 200);
@@ -54,10 +54,10 @@ void main(){
   Child();
   print('-------------命名构造函数和初始化列表-------------');
   Child.mingminggouzaohanshu2('哈哈哈哈', '啊啊啊啊');
-  print('-------------类的工厂构造函数-------------');
-  Child.factory('小明');
-  Child.factory('小明');
-  Child.factory('小王');
+//  print('-------------类的工厂构造函数-------------');
+//  Child.factory('小明');
+//  Child.factory('小明');
+//  Child.factory('小王');
   print('-------------抽象类与抽象方法-------------');
 //  无法new一个抽象类
 //  AbstractClass();
@@ -65,38 +65,39 @@ void main(){
     ..abstractMethod()
     ..nonAbstractMethod()
     ..nonAbstractMethod2();
+
   print('-------------接口-------------');
   MyInterface().interfaceMethod();
   MyImpl().interfaceMethod();
-  print('-------------枚举类-------------');
-  print(Color.blue);
-  print(Color.blue.index);
-  print('-------------Mixin-------------');
-  MyMixinedClass()
-    ..functionA()
-    ..functionB();
-  print('-------------static-------------');
-  print(MyMixinedClass.a);
-  MyMixinedClass.staticFunction();
-  print('-------------泛型-------------');
-  GenericsClass()
-      ..functionB('啊啊啊啊')
-      ..functionC(100)
-      ..functionC('哈哈哈哈')
-      ..functionC(FirstClass());
-  GenericsClass2<String>()
-    ..functionC('hhhhhh');
-  print('-------------实现call函数-------------');
-  var temp = AsynClass();
-  temp('hhhhh');
-  print('-------------get()set()-------------');
-  var g = GetAndSetClass();
-  print(g.a);
-  g.a = 50;
-  print(g.a);
-  print('-------------异步-------------');
-  AsynClass().functionA();
-  //  Parent parent = Child();
-//  parent.justPrint();
+//  print('-------------枚举类-------------');
+//  print(Color.blue);
+//  print(Color.blue.index);
+//  print('-------------Mixin-------------');
+//  MyMixinedClass()
+//    ..functionA()
+//    ..functionB();
+//  print('-------------static-------------');
+//  print(MyMixinedClass.a);
+//  MyMixinedClass.staticFunction();
+//  print('-------------泛型-------------');
+//  GenericsClass()
+//      ..functionB('啊啊啊啊')
+//      ..functionC(100)
+//      ..functionC('哈哈哈哈')
+//      ..functionC(FirstClass());
+//  GenericsClass2<String>()
+//    ..functionC('hhhhhh');
+//  print('-------------实现call函数-------------');
+//  var temp = AsynClass();
+//  temp('hhhhh');
+//  print('-------------get()set()-------------');
+//  var g = GetAndSetClass();
+//  print(g.a);
+//  g.a = 50;
+//  print(g.a);
+//  print('-------------异步-------------');
+//  AsynClass().functionA();
+//  //  Parent parent = Child();
+////  parent.justPrint();
 
 }
