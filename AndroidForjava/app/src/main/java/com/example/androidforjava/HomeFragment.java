@@ -5,9 +5,11 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +19,7 @@ import java.util.List;
 
 
 public class HomeFragment extends Fragment {
-
+    final static String TAG = "PrintAllFunctionA";
     View view;
 
     public HomeFragment() {
@@ -70,6 +72,20 @@ public class HomeFragment extends Fragment {
         listBeans.add(bean3);
         ListItemAdapter adapter = new ListItemAdapter(getActivity(),listBeans);
         recyclerView.setAdapter(adapter);
+
+        View root = view.findViewById(R.id.root);
+        printAll(root,"");
     }
+
+
+    public void printAll(View view,String placeHolder){
+        System.out.println(placeHolder + view.toString());
+        if (view instanceof ViewGroup){
+            for (int i = 0; i < ((ViewGroup) view).getChildCount(); i++){
+                printAll(((ViewGroup) view).getChildAt(i),placeHolder + "     ");
+            }
+        }
+    }
+
 
 }

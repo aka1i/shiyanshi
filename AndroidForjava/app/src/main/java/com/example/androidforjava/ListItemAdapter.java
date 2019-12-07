@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -22,7 +23,7 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
         this.context=context;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView nameText;
         TextView scoreText;
         TextView monthSellOutText;
@@ -38,7 +39,6 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
             this.deliveryMoneyText = view.findViewById(R.id.deliveryMoney);
             this.avgConsumptionText = view.findViewById(R.id.avg_consumption_money);
             this.arrivedTimeText = view.findViewById(R.id.arrived_time);
-
         }
     }
 
@@ -51,6 +51,12 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
         holder.deliveryMoneyText.setText("配送￥" + bean.getDeliveryMoney());
         holder.avgConsumptionText.setText("人均￥" + bean.getAvgConsumption());
         holder.arrivedTimeText.setText(bean.getArrivedTime() + "分钟送达");
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"我是第" + position,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -65,6 +71,5 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
                 .inflate(R.layout.home_list_item,parent,false);
         return new ListItemAdapter.ViewHolder(view);
     }
-
 
 }

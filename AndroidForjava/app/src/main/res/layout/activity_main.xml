@@ -26,7 +26,6 @@
             app:menu="@menu/navigation"
             app:itemIconTint="@drawable/bottom_navigation_selector"
             app:itemTextColor="@drawable/bottom_navigation_selector"/>
-
     </LinearLayout>
 
 

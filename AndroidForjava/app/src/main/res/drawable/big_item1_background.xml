@@ -3,4 +3,6 @@
 
     <solid android:color="@color/big_item1"/>
     <corners android:radius="10dp"/>
+
+
 </shape>
